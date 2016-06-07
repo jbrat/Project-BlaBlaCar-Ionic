@@ -1,0 +1,112 @@
+.vosAnonnces {
+  background: url('../img/accueil.jpg') no-repeat fixed center;
+}
+
+.homeText {
+  text-align: center;
+  font-size: 33px;
+  color: darkblue;
+  margin-top:15%;
+  line-height:30px;
+}
+
+.homeDescription {
+  text-align: center;
+  font-size:22px;
+  color:darkblue;
+  margin-top:40%;
+}
+
+.buttonProposer {
+  margin-top: 80%;
+  margin-left: 35%;
+}
+
+.buttonRechercher {
+  margin-top: 10%;
+  margin-left: 32%;
+}
+
+.button.button-light {
+  color:#387ef5;
+}
+
+.departIcon {
+  font-size:22px;
+  color:green;
+  display:inline;
+  padding:3px;
+}
+
+.arriveIcon {
+  color:red;
+  font-size:22px;
+  display:inline;
+  padding:3px;
+}
+
+.inputSearch {
+  display:inline!important;
+  border:1px solid grey!important;
+  margin-left: 5%;
+  border-radius:10px 10px 10px 10px;
+  width:80%;
+}
+
+.marginLeftSearch {
+  margin-left:5px;
+}
+
+.searchButton {
+  margin-top:5%;
+  margin-left:30%;
+}
+
+.barreDateHeure {
+  margin-top:4%;
+  position:relative!important;
+}
+
+.barreDateHeure .title {
+  text-align:left;
+  font-size:14px!important;
+  font-weight: bold;
+  position:relative!important;
+}
+
+.allerRetour {
+  padding:20px;
+}
+
+.theCheckbox {
+  padding:0px;
+  display: inline;
+}
+
+.postTrajet {
+  margin-top:20%;
+}
+
+.leftAllerRetour {
+  display:inline;
+  float:left;
+}
+
+.iconAllerRetour {
+  display:inline;
+  font-size:20px;
+}
+
+.dateTimePicker {
+margin-top:70%;
+}
+
+.inlineD{
+  display:inline!important;
+}
+
+.allerret{
+  font-size:12px!important;
+  background-color: rgba(127, 127, 127, 0.08)!important;
+}
+
