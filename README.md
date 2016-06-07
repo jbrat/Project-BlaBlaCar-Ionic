@@ -3,9 +3,13 @@ This is a small project to understand and test Ionic Framework
 
 # Installation 
 
+Npm :
 ``
 npm install
+``
 
+Bower : 
+``
 bower install
 ``
 
