@@ -10,8 +10,13 @@ bower install
 
 Launch the application test :
 
+Debug on Android and Iphone Screen : 
 ``
 ionic serve --labs
-ionic serve # without the mode labs with Iphone & Android screen
 ``
+Just full screen dev
+``
+ionic serve
+``
+
 
