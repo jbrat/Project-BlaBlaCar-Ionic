@@ -5,6 +5,7 @@ This is a small project to understand and test Ionic Framework
 
 ``
 npm install
+
 bower install
 ``
 
@@ -14,6 +15,7 @@ Debug on Android and Iphone Screen :
 ``
 ionic serve --labs
 ``
+
 Just full screen dev
 ``
 ionic serve
