@@ -6,7 +6,7 @@ angular.module('BlaBlaCar')
         return $firebaseArray(itemsRef);
     })
 
-    .controller('TrajetCtrl', function($scope, $ionicHistory, ionicDatePicker, ionicTimePicker, Trajets) {
+    .controller('TrajetCtrl', function($scope, $state, ionicDatePicker, ionicTimePicker, Trajets) {
 
         $scope.TrajetFactory = Trajets;
 
@@ -31,7 +31,7 @@ angular.module('BlaBlaCar')
         var datePickerTrajetStart = {
             callback: function (val) {  //Mandatory
                 dateStart = new Date(val);
-                $scope.trajet.dateDepart = dateStart.getFullYear()+"/"+dateStart.getMonth()+"/"+dateStart.getDay();
+                $scope.trajet.dateDepart = dateStart.getDay()+"/"+dateStart.getMonth()+"/"+dateStart.getFullYear();
 
             },
             from: new Date(2012, 1, 1),
@@ -46,7 +46,7 @@ angular.module('BlaBlaCar')
         var datePickerTrajetEnd = {
             callback: function(val) {
                 dateEnd = new Date(val);
-                $scope.trajet.dateEnd = dateEnd.getFullYear()+"/"+dateEnd.getMonth()+"/"+dateEnd.getDay();
+                $scope.trajet.dateEnd = dateEnd.getDay()+"/"+dateEnd.getMonth()+"/"+dateEnd.getFullYear();
             },
             from: new Date(2012, 1, 1),
             to: new Date(2016, 10, 30),
@@ -110,7 +110,12 @@ angular.module('BlaBlaCar')
         //--------------------------------------------------------------------//
 
         // Method to post a trajet
-        $scope.postTrajet = function() {
+        $scope.postTrajet = function(isValid) {
+
+            if (!isValid) {
+                alert('Vous devez remplir tous les champs');
+                return;
+            }
             var regex = new RegExp("[ ,]+", "g");
             var depart = $scope.trajet.pointDepart.split(regex);
             var arrive = $scope.trajet.pointArrive.split(regex);
@@ -123,6 +128,7 @@ angular.module('BlaBlaCar')
             // Persist the object on firebase
             $scope.TrajetFactory.$add($scope.trajet);
 
+            alert('Trajet ajouté avec succès');
             $state.go('app.home');
 
         }
