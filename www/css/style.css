@@ -76,7 +76,7 @@
   position:relative!important;
 }
 
-.allerRetour {
+.iconTrajet {
   padding:20px;
 }
 
@@ -89,7 +89,7 @@
   margin-top:20%;
 }
 
-.leftAllerRetour {
+.iconLeftTrajet {
   display:inline;
   float:left;
 }

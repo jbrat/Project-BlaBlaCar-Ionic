@@ -40,7 +40,7 @@ angular.module('ionicTimePicker', ['ionic', 'ionic-timepicker'])
 //-----------------------------------------------------------------//
 
 
-angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'ionicDatePicker', 'ionicTimePicker', 'firebase' ])
+angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'ionicDatePicker', 'ionicTimePicker', 'firebase', 'ngAutocomplete'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
