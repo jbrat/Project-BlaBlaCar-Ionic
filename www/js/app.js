@@ -39,12 +39,8 @@ angular.module('ionicTimePicker', ['ionic', 'ionic-timepicker'])
   });
 //-----------------------------------------------------------------//
 
-//-----------------------------------------------------------------//
-// Ionic Firebase module
-angular.module("BlaBlaCar", ["ionic", "firebase"])
-//-----------------------------------------------------------------//
 
-angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'ionicDatePicker', 'ionicTimePicker' ])
+angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'ionicDatePicker', 'ionicTimePicker', 'firebase' ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -72,7 +68,8 @@ angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'ionicDatePicker'
       url: '/search',
       views: {
         'menuContent': {
-          templateUrl: 'templates/search.html'
+          templateUrl: 'templates/search.html',
+          controller: 'SearchCtrl'
         }
       }
     })
