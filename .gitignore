@@ -1,0 +1,2 @@
+# Ignore module to git
+node_modules/*
