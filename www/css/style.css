@@ -5,26 +5,28 @@
 .homeText {
   text-align: center;
   font-size: 33px;
-  color: darkblue;
+  color: white;
   margin-top:15%;
   line-height:30px;
 }
 
 .homeDescription {
   text-align: center;
-  font-size:22px;
-  color:darkblue;
+  font-size:16px;
+  color:rgba(255, 255, 255, 0.5);
   margin-top:40%;
 }
 
 .buttonProposer {
   margin-top: 80%;
-  margin-left: 35%;
+  margin-left: 5%;
+  width:90%
 }
 
 .buttonRechercher {
   margin-top: 10%;
-  margin-left: 32%;
+  margin-left: 5%;
+  width:90%
 }
 
 .button.button-light {
