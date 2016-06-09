@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.blablacar352105" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>BlablaCar</name>
-  <decription>
-    BlablaCar application with Ionic
-  </description>
-  <author email="bratjulien@gmail.com" href="https://github.com/jbrat/">
+  <description>
+        BlaBlaCar project with Ionic Framework
+    </description>
+  <author email="bratjulien@gmail.com" href="http://github.com/jbrat">
       BRAT Julien
     </author>
   <content src="index.html"/>

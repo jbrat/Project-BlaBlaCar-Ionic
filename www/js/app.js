@@ -41,7 +41,7 @@ angular.module('ionicTimePicker', ['ionic', 'ionic-timepicker'])
 
 //-----------------------------------------------------------------//
 // Ionic Firebase module
-angular.module("starter", ["ionic", "firebase"])
+angular.module("BlaBlaCar", ["ionic", "firebase"])
 //-----------------------------------------------------------------//
 
 angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'ionicDatePicker', 'ionicTimePicker' ])

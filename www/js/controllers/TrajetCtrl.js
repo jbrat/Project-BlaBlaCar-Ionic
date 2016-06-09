@@ -1,6 +1,7 @@
-angular.module('BlaBlaCar.controllers', [])
+angular.module('BlaBlaCar')
     .controller('TrajetCtrl', function($scope, ionicDatePicker, ionicTimePicker) {
 
+        // datePicker
         var datePickerTrajet = {
             callback: function (val) {  //Mandatory
                 console.log('Return value from the datepicker popup is : ' + val, new Date(val));
@@ -27,6 +28,7 @@ angular.module('BlaBlaCar.controllers', [])
             ionicDatePicker.openDatePicker(datePickerTrajet);
         };
 
+        // TimePicker
         var timePickerTrajet = {
             callback: function (val) {      //Mandatory
                 if (typeof (val) === 'undefined') {
