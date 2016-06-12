@@ -1,2 +1,4 @@
 # Ignore module to git
 node_modules/*
+
+bower_components/*
