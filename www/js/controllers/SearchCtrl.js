@@ -1,24 +1,37 @@
 angular.module('BlaBlaCar')
-// Factory pour Firebase
-    .factory("Trajets", function($firebaseArray) {
-        var itemsRef = new Firebase("https://project-8473858751034565420.firebaseio.com/trajets");
-        return $firebaseArray(itemsRef);
-    })
-
-    .controller('SearchCtrl', function($scope, Trajets) {
-
-        $scope.searchFactory = Trajets;
-
+    .controller('SearchCtrl', function($scope, $state, ionicDatePicker) {
         $scope.search = {
             depart:'',
             departVille:'',
             departPays:'',
             arrive:'',
             arriveVille:'',
-            arrivePays:''
+            arrivePays:'',
+            date:''
         };
 
-        $scope.search = function(isValid) {
+        //------------------- DatePicker ------------------//
+        var datePickerVoyage = {
+            callback: function (val) {  //Mandatory
+                dateVoyage = new Date(val);
+                $scope.search.date = dateVoyage.getDay()+"/"+dateVoyage.getMonth()+"/"+dateVoyage.getFullYear();
+
+            },
+            from: new Date(2012, 1, 1),
+            to: new Date(2016, 10, 30),
+            inputDate: new Date(),
+            mondayFirst: true,
+            disableWeekdays: [0],
+            closeOnSelect: false,
+            templateType: 'popup'
+        };
+
+        $scope.openDatePicker = function(){
+            ionicDatePicker.openDatePicker(datePickerVoyage);
+        };
+
+        //------------------ Search Form Send --------------//
+        $scope.searchAction = function(isValid) {
             if(!isValid) {
                 alert("Vous devez remplir tous les champs de recherche");
                 return;
@@ -33,6 +46,6 @@ angular.module('BlaBlaCar')
             $scope.search.arriveVille = arrive[0];
             $scope.search.arrivePays = arrive[1];
 
-            console.log($scope.searchFactory);
+            $state.go('app.results', {searchValue: angular.toJson($scope.search)});
         }
     });

@@ -1,7 +1,7 @@
 <ion-view view-title="Rechercher">
   <ion-content>
     <br>
-    <form name="formSearch" ng-submit="search(formSearch.$valid)" novalidate>
+    <form name="formSearch" ng-submit="searchAction(formSearch.$valid)" novalidate>
     <div class="marginLeftSearch">
       <i class="icon ion-ionic placeholder-icon departIcon"></i>
       <input type="search" ng-model="search.depart" ng-required="true" ng-autocomplete class="inputSearch" placeholder="Point de départ"><br><br>
@@ -9,6 +9,11 @@
     <div class="marginLeftSearch">
       <i class="icon ion-ionic placeholder-icon arriveIcon"></i>
       <input type="search" ng-model="search.arrive" ng-required="true" ng-autocomplete class="inputSearch"  placeholder="Point d'arrivée">
+    </div>
+      <br>
+    <div class="marginLeftSearch">
+      <i class="icon ion-calendar placeholder-icon"></i>
+        <input ng-model="search.date" ng-required="true" class="inlineD allerret" type="text" ng-click="openDatePicker()" placeholder="Date du voyage">
     </div>
       <input type="submit" class="button button-positive searchButton" value="Rechercher">
     </form>
