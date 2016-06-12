@@ -19,7 +19,8 @@ angular.module('BlaBlaCar')
                     if (trajet.pointArrivePays == searchParams.arrivePays
                         &&trajet.pointArriveVille == searchParams.arriveVille
                         && trajet.pointDepartPays == searchParams.departPays
-                        && trajet.pointDepartVille == searchParams.departVille) {
+                        && trajet.pointDepartVille == searchParams.departVille
+                        && trajet.dateDepart == searchParams.date) {
 
                         results.push(trajet);
                     }
