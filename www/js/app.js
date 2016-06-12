@@ -1,6 +1,6 @@
 // Ionic BlaBlaCar App
 
-angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'ionicDatePicker', 'ionicTimePicker', 'firebase', 'ngAutocomplete', 'BlaBlaCar.routes'])
+angular.module('BlaBlaCar', ['ionic', 'BlaBlaCar.controllers', 'BlaBlaCar.routes', 'ionicDatePicker', 'ionicTimePicker', 'firebase', 'ngAutocomplete', 'ngCordova'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

@@ -6,7 +6,7 @@ angular.module('BlaBlaCar')
         return $firebaseArray(itemsRef);
     })
 
-    .controller('TrajetCtrl', function($scope, $state, ionicDatePicker, ionicTimePicker, Trajets) {
+    .controller('TrajetCtrl', function($scope, $state, ionicDatePicker, ionicTimePicker, Trajets, $cordovaGeolocation) {
 
         $scope.TrajetFactory = Trajets;
 
@@ -108,6 +108,25 @@ angular.module('BlaBlaCar')
             ionicTimePicker.openTimePicker(timePickerTrajetEnd);
         }
         //--------------------------------------------------------------------//
+
+        //--------------- Geolocalisation City start -------------------------//
+        $scope.geolocCity = function() {
+            var posOptions = {timeout: 10000, enableHighAccuracy: false};
+            $cordovaGeolocation
+                .getCurrentPosition(posOptions)
+                .then(function (position) {
+                    console.log(position);
+                    var lat  = position.coords.latitude;
+                    var long = position.coords.longitude;
+
+                    
+                }, function(err) {
+                    alert("Erreur lors de la récupération de votre position actuelle");
+                });
+
+        };
+
+
 
         // Method to post a trajet
         $scope.postTrajet = function(isValid) {

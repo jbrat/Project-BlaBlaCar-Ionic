@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "ionic-datepicker": "^1.1.0",
-    "ionic-timepicker": "^0.5.1"
+    "ionic-timepicker": "^0.5.1",
+    "ngCordova": "^0.1.26-alpha"
   },
   "resolutions": {
     "angular": "~1.2.24"
