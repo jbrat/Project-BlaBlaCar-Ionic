@@ -125,6 +125,7 @@ angular.module('BlaBlaCar')
                         var pays = '';
                         var compteur = 0;
 
+                        console.log(data);
                         angular.forEach(data.results[0].address_components, function(object) {
                             if(compteur==2){
                                 ville = object.long_name;

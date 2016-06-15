@@ -4,7 +4,7 @@ angular.module('BlaBlaCar.controllers', [])
 
   // Form data for the login modal
   $scope.loginData = {};
-
+/*
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -32,4 +32,5 @@ angular.module('BlaBlaCar.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+  */
 });

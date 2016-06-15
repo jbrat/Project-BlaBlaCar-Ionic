@@ -44,6 +44,24 @@ angular.module('BlaBlaCar.routes', [])
                     }
                 }
             })
+            .state('app.login', {
+                url: '/login',
+                views: {
+                    'menuContent': {
+                        templateUrl : 'templates/login.html',
+                        controller: 'LoginCtrl'
+                    }
+                }
+            })
+            .state('app.register', {
+                url: '/register',
+                views: {
+                    'menuContent': {
+                        templateUrl : 'templates/register.html',
+                        controller: 'RegisterCtrl'
+                    }
+                }
+            })
 
         $urlRouterProvider.otherwise('/app/home')
     });

@@ -4,18 +4,18 @@
       <div style="text-align: center"><h1 style="color:#0a9dc7;">Connexion</h1></div><br>
       <a style="margin-left: 5%;width:90%" class="button button-positive" href="#/app/propose"><i style="margin-right:10%;color:white" class="icon ion-social-facebook placeholder-icon"></i>CONNEXION FACEBOOK</a><br><br>
       <p style="text-align: center;font-size:16px;">-------- ou --------</p><br>
-    <form ng-submit="doLogin()">
+    <form ng-submit="connectionAction()" novalidate>
       <div class="list">
         <label class="item item-input">
           <span class="input-label"><i class="icon ion-email placeholder-icon"></i>E-mail</span>
-          <input type="text" ng-model="loginData.username">
+          <input type="text" ng-model="loginData.username" ng-required="true">
         </label>
         <label class="item item-input">
           <span class="input-label"><i class="icon ion-locked placeholder-icon"></i>Mot de passe</span>
-          <input type="password" ng-model="loginData.password">
+          <input type="password" ng-model="loginData.password" ng-required="true">
         </label>
         <label class="item">
-          <button class="button button-block button-calm" type="submit">CONNEXION</button>
+          <button class="button button-block button-calm" type="submit">Connexion</button>
         </label>
       </div>
     </form>
