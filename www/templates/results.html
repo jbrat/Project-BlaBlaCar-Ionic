@@ -2,52 +2,21 @@
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="item in results">
-                {{item.pointDepart}}
-                <!-- 
-                pointDepart: '',
-            pointDepartVille:'',
-            pointDepartPays:'',
-            pointArrive: '',
-            pointArriveVille:'',
-            pointArrivePays:'',
-            allerRetour: '',
-            fumeur: '',
-            dateDepart: '',
-            timeDepart : '',
-            dateEnd: '',
-            timeEnd: ''
-                
-                -->
+                <div style="margin:20px;padding:10px;background-color:rgba(0, 0, 0, 0.11);border: 1px solid; border-radius: 10px;">
+                    <div style="display:block">
+                        <h1 style="display:inline;">4:20</h1>
+                        <h3  style="display:inline;float:right">{{ item.prix }} / place</h3><br>
+                        <h4  style="display:inline">{{ item.pointDepartVille }} > {{ item.pointArriveVille }}</h4>
+                        <h4 ng-show="{{ item.fumeur }}"> Option : fumeur</h4>
+                    </div>
+                    <hr>
+                    <div style="display:block">
+                        <img style="display:inline;max-width:100px" src="../img/avatar.png" alt="avatar d'avatar"/>
+                        <h4 style="display:inline;vertical-align: 350%">Avatar, 666 ans</h4>
+                        <i style="display:inline;font-size:26px;vertical-align: 350%;float:right" class="icon ion-wifi placeholder-icon"></i>
+                    </div>
+                </div>
             </ion-item>
         </ion-list>
-        <div style="margin:20px;padding:10px;background-color:rgba(0, 0, 0, 0.11);border: 1px solid; border-radius: 10px;">
-            <div style="display:block">
-                <h1 style="display:inline;">4:20</h1>
-                <h3  style="display:inline;float:right">6€ / place</h3><br>
-            <h4  style="display:inline">Clermont > Vichy</h4>
-            
-        </div>
-        <hr>
-        <div style="display:block">
-             <img style="display:inline;max-width:100px" src="../img/avatar.png" alt="avatar d'avatar"/>
-            <h4 style="display:inline;vertical-align: 350%">Avatar, 666 ans</h4>
-            <i style="display:inline;font-size:26px;vertical-align: 350%;float:right" class="icon ion-wifi placeholder-icon"></i>
-            </div>
-        </div>
-        <div style="margin:20px;padding:10px;background-color:rgba(0, 0, 0, 0.11);border: 1px solid; border-radius: 10px;">
-            <div style="display:block">
-                <h1 style="display:inline;">4:20</h1>
-                <h3  style="display:inline;float:right">6€ / place</h3><br>
-            <h4  style="display:inline">Clermont > Vichy</h4>
-            
-        </div>
-        <hr>
-        <div style="display:block">
-             <img style="display:inline;max-width:100px" src="../img/avatar.png" alt="avatar d'avatar"/>
-            <h4 style="display:inline;vertical-align: 350%">Avatar, 666 ans</h4>
-            <i style="display:inline;font-size:26px;vertical-align: 350%;float:right" class="icon ion-wifi placeholder-icon"></i>
-            </div>
-        </div>
-        
     </ion-content>
 </ion-view>
