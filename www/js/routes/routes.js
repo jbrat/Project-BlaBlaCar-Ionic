@@ -40,7 +40,7 @@ angular.module('BlaBlaCar.routes', [])
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/home.html',
-                        controller: 'TrajetCtrl'
+                        controller: 'AppCtrl'
                     }
                 }
             })

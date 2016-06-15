@@ -14,7 +14,7 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Bonjour {{ loginData.username }}</h1>
+      <h1 class="title">Bonjour {{ user.firstName }} {{ user.lastName }}</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
@@ -30,11 +30,15 @@
           <i class="icon ion-ios-plus-outline"></i>
           Proposer
         </ion-item>
-        <ion-item href="#/app/login">
+        <ion-item href="#/app/login" ng-hide="{{ user.isLogin }}">
           <i class="icon ion-ios-locked"></i>
           Connexion
         </ion-item>
-        <ion-item href="#/app/register">
+        <ion-item ng-click="disconnect()" ng-show="{{ user.isLogin }}">
+          <i class="icon ion-ios-locked"></i>
+          Deconnexion
+        </ion-item>
+        <ion-item href="#/app/register" ng-hide="{{ user.isLogin }}">
           <i class="icon ion-person-add"></i>
           Inscription
         </ion-item>
@@ -47,3 +51,4 @@
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
+
