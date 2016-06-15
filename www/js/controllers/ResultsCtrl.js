@@ -7,7 +7,7 @@ angular.module('BlaBlaCar')
         var itemsRef = new Firebase("https://project-8473858751034565420.firebaseio.com/trajets");
         
 // TO DELETE        
-searchParams = null;
+//searchParams = null;
 
         if(!searchParams || searchParams === undefined) {
             $scope.results = $firebaseArray(itemsRef);

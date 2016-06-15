@@ -1,6 +1,39 @@
 <ion-view view-title="Register">
     <ion-content>
-
+ <br>
+      <div style="text-align: center"><h1 style="color:#0a9dc7;">Inscription</h1></div><br>
+    <form ng-submit="inscriptionAction()" novalidate>
+      <div class="list">
+          <label class="item item-input">
+          <span class="input-label">Nom</span>
+          <input type="text" ng-model="loginData.lastname" ng-required="true">
+        </label>
+          <label class="item item-input">
+          <span class="input-label">Prénom</span>
+          <input type="text" ng-model="loginData.firstname" ng-required="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label"><i class="icon ion-person placeholder-icon"></i>Nom d'utilisateur</span>
+          <input type="text" ng-model="loginData.username" ng-required="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label"><i class="icon ion-email placeholder-icon"></i>E-mail</span>
+          <input type="text" ng-model="loginData.mail" ng-required="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label"><i class="icon ion-locked placeholder-icon"></i>Mot de passe</span>
+          <input type="password" ng-model="loginData.password" ng-required="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label"><i class="icon ion-locked placeholder-icon"></i>Répéter le mot de passe</span>
+          <input type="password" ng-model="loginData.password2" ng-required="true">
+        </label>
+        <label class="item">
+          <button class="button button-block button-calm" type="submit">Inscription</button>
+        </label>
+      </div>
+    </form>
+      
     </ion-content>
 
 </ion-view>
