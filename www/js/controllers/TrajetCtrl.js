@@ -23,7 +23,8 @@ angular.module('BlaBlaCar')
             dateDepart: '',
             timeDepart : '',
             dateEnd: '',
-            timeEnd: ''
+            timeEnd: '',
+            prix: ''
         }
 
 
