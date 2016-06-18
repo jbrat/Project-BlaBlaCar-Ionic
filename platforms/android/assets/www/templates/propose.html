@@ -1,0 +1,67 @@
+<ion-view view-title="Publication">
+  <ion-content>
+      <form name="formTrajet" ng-submit="postTrajet(formTrajet.$valid)" novalidate>
+          <br>
+          <div class="marginLeftSearch">
+            <i class="icon ion-ionic placeholder-icon departIcon"></i>
+
+            <input ng-model="trajet.pointDepart" ng-autocomplete  ng-required="true" type="search" class="inputSearch" placeholder="Point de départ"><i style="margin-left:10px;font-size:20px" ng-click="geolocCity()" class="icon ion-android-locate placeholder-icon"></i><br><br>
+              
+          </div>
+          <div class="marginLeftSearch">
+            <i class="icon ion-ionic placeholder-icon arriveIcon"></i>
+            <input ng-model="trajet.pointArrive" ng-autocomplete ng-required="true" type="search" class="inputSearch" placeholder="Point d'arrivée">
+          </div>
+          <div class="bar bar-header bar-positive barreDateHeure">
+            <h1 class="title">DATE ET HEURE</h1>
+          </div>
+          <div class="iconTrajet">
+            <div class="iconLeftTrajet">
+              <i  class="icon ion-arrow-swap placeholder-icon"></i>
+              <p style="display:inline;">
+                Aller-retour
+              </p>
+            </div>
+            <label class="checkbox theCheckbox">
+              <input ng-model="trajet.allerRetour" type="checkbox" style="display:inline;float:right">
+            </label>
+          </div>
+
+        <div class="iconTrajet">
+            <div class="iconLeftTrajet">
+              <i  class="icon ion-flame placeholder-icon"></i>
+              <p style="display:inline;">
+                Fumeur
+              </p>
+            </div>
+            <label class="checkbox theCheckbox">
+              <input ng-model="trajet.fumeur" type="checkbox" style="display:inline;float:right">
+            </label>
+          </div>
+        <br>
+          <hr>
+          <div style="padding-left:15px">
+
+            <i class="inlineD icon ion-calendar placeholder-icon"></i>
+            <input ng-model="trajet.dateDepart" ng-required="true" class="inlineD allerret" type="text" ng-click="openDatePickerStart()" placeholder="Date de départ">
+            <input  ng-model="trajet.timeDepart" class="inlineD allerret" ng-required="true" type="text" ng-click="openTimePickerStart()" placeholder="Heure">
+            <hr>
+          </div>
+          <hr>
+        <div style="padding-left:15px">
+
+          <i class="inlineD icon ion-calendar placeholder-icon"></i>
+          <input ng-model="trajet.dateEnd" class="inlineD allerret" ng-required="true" type="text" ng-click="openDatePickerEnd()" placeholder="Date d'arrivée">
+          <input ng-model="trajet.timeEnd" class="inlineD allerret" type="text" ng-required="true" ng-click="openTimePickerEnd()" placeholder="Heure">
+          <hr>
+        </div>
+ <label class="item item-input">
+          <i class="icon ion-social-usd-outline placeholder-icon"></i><span style="margin-left:10px" class="input-label">Prix</span>
+          <input type="text" ng-model="trajet.prix" ng-required="true">
+        </label>
+          <div style="text-align: center">
+              <input type="submit" class="button button-positive postTrajet" value="Sauvegarder">
+          </div>
+      </form>
+  </ion-content>
+</ion-view>

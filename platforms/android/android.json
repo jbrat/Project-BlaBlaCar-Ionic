@@ -1,0 +1,48 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"com.jcjee.plugins.EmailComposer\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "application": [
+                        {
+                            "xml": "<provider android:authorities=\"com.ionicframework.blablacar352105.plugins.emailcomposer.provider\" android:name=\"com.jcjee.plugins.EmailAttachmentProvider\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.jcjee.plugins.emailcomposer": {
+            "PACKAGE_NAME": "com.ionicframework.blablacar352105"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com.jcjee.plugins.emailcomposer/www/EmailComposer.js",
+            "id": "com.jcjee.plugins.emailcomposer.EmailComposer",
+            "clobbers": [
+                "EmailComposer"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "com.jcjee.plugins.emailcomposer": "1.4.6"
+    }
+}
