@@ -32,7 +32,7 @@ angular.module('BlaBlaCar')
                         $ionicHistory.clearHistory();
                         $ionicHistory.nextViewOptions({ disableBack: true, historyRoot: true });
                         $state.go('app.home', {reload: true});
-                    })
+                    });
                 } else {
                     alert("Votre email ou votre mot de passe n'est pas bon");
                 }
@@ -48,9 +48,19 @@ angular.module('BlaBlaCar')
                     console.log("Login Failed!", error);
                     alert("La connnexion avec Facebook a échoué");
                 } else {
-                    // the access token will allow us to make Open Graph API calls
-                    console.log(authData);
-                    console.log(authData.facebook.accessToken);
+                    user.userName = authData.facebook.name;
+                    user.lastName = authData.facebook.last_name;
+                    user.firstName = authData.facebook.first_name;
+                    user.email = authData.facebook.email;
+                    user.lisLogin = true;
+                    
+                    $ionicHistory.clearCache().then(function() {
+                        //now you can clear history or goto another state if you need
+                        $ionicHistory.clearHistory();
+                        $ionicHistory.nextViewOptions({ disableBack: true, historyRoot: true });
+                        $state.go('app.home', {reload: true});
+                    })
+
                 }
             }, {
                 remember: "sessionOnly",

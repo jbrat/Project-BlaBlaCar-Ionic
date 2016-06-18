@@ -6,7 +6,7 @@ angular.module('BlaBlaCar')
         return $firebaseArray(itemsRef);
     })
 
-    .controller('TrajetCtrl', function($scope, $state, ionicDatePicker, ionicTimePicker, Trajets, $cordovaGeolocation, $http) {
+    .controller('TrajetCtrl', function($scope, $state, ionicDatePicker, ionicTimePicker, Trajets, $cordovaGeolocation, $http, user) {
 
         $scope.TrajetFactory = Trajets;
 
@@ -24,7 +24,10 @@ angular.module('BlaBlaCar')
             timeDepart : '',
             dateEnd: '',
             timeEnd: '',
-            prix: ''
+            prix: '',
+            userMail:'',
+            lastName:'',
+            firstName:''
         }
 
 
@@ -32,8 +35,7 @@ angular.module('BlaBlaCar')
         var datePickerTrajetStart = {
             callback: function (val) {  //Mandatory
                 dateStart = new Date(val);
-                $scope.trajet.dateDepart = dateStart.getDay()+"/"+dateStart.getMonth()+"/"+dateStart.getFullYear();
-
+                $scope.trajet.dateDepart = dateStart.toLocaleDateString();
             },
             from: new Date(2012, 1, 1),
             to: new Date(2016, 10, 30),
@@ -47,13 +49,12 @@ angular.module('BlaBlaCar')
         var datePickerTrajetEnd = {
             callback: function(val) {
                 dateEnd = new Date(val);
-                $scope.trajet.dateEnd = dateEnd.getDay()+"/"+dateEnd.getMonth()+"/"+dateEnd.getFullYear();
+                $scope.trajet.dateEnd = dateEnd.toLocaleDateString();
             },
             from: new Date(2012, 1, 1),
             to: new Date(2016, 10, 30),
             inputDate: new Date(),
             mondayFirst: true,
-            disableWeekdays: [0],
             closeOnSelect: false,
             templateType: 'popup'
         }
@@ -116,7 +117,6 @@ angular.module('BlaBlaCar')
             $cordovaGeolocation
                 .getCurrentPosition(posOptions)
                 .then(function (position) {
-                    console.log(position);
                     var lat  = position.coords.latitude;
                     var long = position.coords.longitude;
 
@@ -146,7 +146,6 @@ angular.module('BlaBlaCar')
                 }, function(err) {
                     alert("Erreur lors de la récupération de votre position actuelle");
                 });
-
         };
 
 
@@ -167,6 +166,11 @@ angular.module('BlaBlaCar')
             $scope.trajet.pointArriveVille = arrive[0];
             $scope.trajet.pointArrivePays = arrive[1];
 
+            if (user.isLogin) {
+                $scope.trajet.userMail = user.email;
+                $scope.trajet.lastName = user.lastName;
+                $scope.trajet.firstName = user.firstName;
+            }
             // Persist the object on firebase
             $scope.TrajetFactory.$add($scope.trajet);
 
